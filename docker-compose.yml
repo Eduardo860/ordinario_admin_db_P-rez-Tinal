@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    env_file: 
+      - .env
+    ports:
+      - "${MYSQL_PORT}:3306"
+
+  nodejs:
+    build: .
+    container_name: nodejs_container
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - mysql
+    environment:
+      - DB_URI=${DB_URI}
