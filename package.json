@@ -1,0 +1,41 @@
+{
+  "name": "ordinario_admin_db",
+  "version": "1.0.0",
+  "description": "API REST ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eduardo860/ordinario_admin_db_Perez-Tinal.git"
+  },
+  "keywords": [
+    "api",
+    "nodejs",
+    "mysql",
+    "docker",
+    "aws",
+    "administracion",
+    "base",
+    "de",
+    "datos"
+  ],
+  "author": "Eduardo Perez, Adrian Tinal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eduardo860/ordinario_admin_db_Perez-Tinal"
+  },
+  "homepage": "https://github.com/Eduardo860/ordinario_admin_db_Perez-Tinal#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5"
+  }
+
+  
+}
+
+
