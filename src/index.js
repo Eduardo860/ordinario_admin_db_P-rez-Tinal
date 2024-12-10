@@ -10,12 +10,14 @@ app.use(express.json());
 const estudiantesRoutes = require('./rutas/estudiantes');
 const maestrosRoutes = require('./rutas/maestros');
 const materiasRoutes = require('./rutas/materias');
+const calificacionesRoutes = require('./rutas/calificaciones');
 
 
 // Registrar rutas
 app.use('/api/estudiantes', estudiantesRoutes);
 app.use('/api/maestros', maestrosRoutes);
 app.use('/api/materias', materiasRoutes);   
+app.use('/api/calificaciones', calificacionesRoutes);
 
 
 
