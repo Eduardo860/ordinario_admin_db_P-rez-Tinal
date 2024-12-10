@@ -9,12 +9,13 @@ app.use(express.json());
 // Importar rutas
 const estudiantesRoutes = require('./rutas/estudiantes');
 const maestrosRoutes = require('./rutas/maestros');
-
+const materiasRoutes = require('./rutas/materias');
 
 
 // Registrar rutas
 app.use('/api/estudiantes', estudiantesRoutes);
 app.use('/api/maestros', maestrosRoutes);
+app.use('/api/materias', materiasRoutes);   
 
 
 
