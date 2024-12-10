@@ -1,5 +1,8 @@
 USE ordinario_modelo_admin;
 
+USE ordinario_modelo_admin;
+
+
 CREATE TABLE estudiantes (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(150) NOT NULL,
@@ -30,6 +33,20 @@ CREATE TABLE materias (
   fecha_creacion DATETIME NOT NULL,
   FOREIGN KEY (profesor_id) REFERENCES maestros(id)
 );
+
+
+CREATE TABLE calificaciones (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  estudiante_id INT NOT NULL,
+  maestro_id INT NOT NULL,
+  materia_id INT NOT NULL,
+  usuario_creacion VARCHAR(100) NOT NULL,
+  fecha_creacion DATETIME NOT NULL,
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id),
+  FOREIGN KEY (maestro_id) REFERENCES maestros(id),
+  FOREIGN KEY (materia_id) REFERENCES materias(id)
+);
+
 
 CREATE TABLE calificaciones (
   id INT AUTO_INCREMENT PRIMARY KEY,
