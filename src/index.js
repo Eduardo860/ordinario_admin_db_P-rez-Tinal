@@ -1,13 +1,29 @@
 const express = require('express');
-const app = express();
-const port = 3000;
+const mysql = require('mysql2');
+require('dotenv').config();
 
-// Primera Prueba
+const app = express();
+app.use(express.json());
+
+
+// Importar rutas
+const estudiantesRoutes = require('./rutas/estudiantes');
+const maestrosRoutes = require('./rutas/maestros');
+
+
+
+// Registrar rutas
+app.use('/api/estudiantes', estudiantesRoutes);
+app.use('/api/maestros', maestrosRoutes);
+
+
+
+// Endpoint de prueba
 app.get('/', (req, res) => {
-  res.send('¡Hola Mundo prueba!');
+    res.send('¡Hola Mundo!');
 });
 
-// Hacer que el servidor escuche en el puerto 3000
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+// Escuchar en el puerto especificado en .env
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor escuchando en http://localhost:${process.env.PORT}`);
 });
