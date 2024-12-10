@@ -8,6 +8,9 @@ services:
       - .env
     ports:
       - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./SQL:/docker-entrypoint-initdb.d
+
 
   nodejs:
     build: .
